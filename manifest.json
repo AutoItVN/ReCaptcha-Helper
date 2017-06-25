@@ -1,0 +1,47 @@
+{
+  "background": {
+    "scripts": ["lib/jquery.js", "js/background.js"]
+  },
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_title": "ReCaptcha Helper"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": ["lib/jquery.js", "js/iframe.js"],
+      "run_at": "document_end",
+      "matches": [ "http://*/*", "https://*/*", "file://*" ]
+    }
+  ],
+  "web_accessible_resources": ["js/recaptcha.js"],
+  "description": "Расширение помогает вводить каптчу для получения MRAI. Разработчика найти не получилось...",
+  "homepage_url": "http://blog.yosyfovych.te.ua/",
+  "icons": {
+    "128": "img/icon.png",
+    "16": "img/icon.png",
+    "48": "img/icon.png"
+  },
+  "manifest_version": 2,
+  "name": "ReCaptcha Helper",
+  "incognito": "split",
+  "permissions": [
+    "webNavigation",
+    "contextMenus",
+    "storage",
+    "tabs",
+    "activeTab",
+    "nativeMessaging",
+    "bookmarks",
+    "management",
+    "webRequest",
+    "webRequestBlocking",
+    "cookies",
+    "https://*/",
+    "http://*/",
+    "<all_urls>",
+    "unlimitedStorage"
+  ],
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "1.0.1"
+}
